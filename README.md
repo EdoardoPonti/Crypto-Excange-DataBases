@@ -108,7 +108,7 @@ psql -d exchange -f sql/03_seed_large.sql   # ~30 sec on a laptop
 psql -d exchange -f sql/04_indexes.sql
 ```
 
-See [`docs/03_indexing.md`](docs/03_indexing.md) for the four
+See [`03_indexing.md`](03_indexing.md) for the four
 benchmarks with before/after plan shapes and what each index does.
 
 ### 3. Concurrency scenarios (needs two psql sessions)
