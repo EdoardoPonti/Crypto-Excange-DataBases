@@ -165,6 +165,4 @@ clean Layer 6 for a later version.
 
 Edoardo Ponti and Amirhoussein Raufi.
 
-## License
 
-MIT. See `LICENSE`.
