@@ -1,22 +1,3 @@
--- ============================================================================
--- Exchange Simulator — Seed Data (Layer 2)
---
--- A small, hand-verifiable dataset:
---   5 users, 5 assets, 4 markets, 5 orders, 1 trade,
---   9 deposits (8 completed + 1 pending), 2 withdrawals.
---
--- Narrative / timeline (used to compute the final balances):
---   t0  deposits processed         -> available balances seeded
---   t1  carol withdraws 1000 USD   (COMPLETED)
---   t2  five orders placed         -> locks move from available to locked
---   t3  one trade executes:
---         bob's  SELL 2 ETH @ 2500 is the maker (rested on the book)
---         carol's BUY  1 ETH @ 2500 is the taker, fully filled
---
--- Run AFTER 02_schema.sql.
--- ============================================================================
-
--- Clean slate (reverse-dependency order)
 TRUNCATE trades, orders, balances, withdrawals, deposits,
          markets, assets, users
 RESTART IDENTITY CASCADE;
