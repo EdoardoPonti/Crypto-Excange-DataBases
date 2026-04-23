@@ -1,20 +1,3 @@
--- ============================================================================
--- Layer 4 — Large seed for benchmarking
---
--- Produces a dataset big enough that the query planner picks non-trivial
--- plans and that index additions produce visible cost changes.
---
---   500 users
---   5 assets, 4 markets (same reference data as the small seed)
---   ~50 000 orders   (30 000 FILLED paired + 20 000 OPEN/CANCELLED noise)
---   ~15 000 trades
---   Timestamps spread over the last 90 days
---
--- Run AFTER 02_schema.sql. This REPLACES the small seed (03_seed.sql).
---
--- Expect ~10-30 seconds to run; the trigger on trades fires once per row.
--- ============================================================================
-
 TRUNCATE trades, orders, balances, withdrawals, deposits,
          markets, assets, users
 RESTART IDENTITY CASCADE;
