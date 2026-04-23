@@ -111,11 +111,3 @@ BEGIN
     RETURN v_new_order_id;
 END;
 $$;
-
-
--- ---------------------------------------------------------------------------
--- Quick self-tests (will show in psql output after install)
--- ---------------------------------------------------------------------------
--- SELECT 'Functions installed. Try:' AS info
--- UNION ALL SELECT '  SELECT place_limit_buy(1, 1, 40000, 0.1);'
--- UNION ALL SELECT '  SELECT place_limit_sell(2, 2, 2500, 0.5);';
