@@ -1,19 +1,3 @@
--- ============================================================================
--- Layer 5 — Concurrency scenarios, runnable
---
--- Each scenario requires TWO psql sessions: A and B. Open two terminals,
--- connect each to your database, and paste the numbered blocks in order.
--- When a line says "BLOCKS", the session will sit waiting — leave it and
--- switch to the other window.
---
--- Reset state between scenarios by re-running 03_seed.sql.
--- Starting state for Alice (user_id=1, asset_id=1):
---   available_amount = 30000, locked_amount = 20000
---
--- Verify at any time with:
---   SELECT user_id, asset_id, available_amount, locked_amount
---   FROM balances WHERE user_id = 1 AND asset_id = 1;
--- ============================================================================
 
 
 -- ############################################################################
