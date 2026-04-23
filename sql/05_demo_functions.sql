@@ -1,27 +1,4 @@
--- ============================================================================
--- Demo Helpers (Layer 5 companion)
---
--- Installable PL/pgSQL functions used by the live demo.
--- Run AFTER 02_schema.sql and 03_seed.sql.
---
---   place_limit_buy(user_id, market_id, price, quantity) -> order_id
---     1. lock the user's quote-asset balance row
---     2. check available funds
---     3. move (price * quantity) from available to locked
---     4. insert the order
---
---   place_limit_sell(user_id, market_id, price, quantity) -> order_id
---     1. lock the user's base-asset balance row
---     2. check available inventory
---     3. move quantity from available to locked
---     4. insert the order
---
--- Both functions run in one transaction. FOR UPDATE on the balance row
--- prevents the lost-update anomaly. Invalid requests raise EXCEPTION,
--- which rolls back the whole transaction cleanly.
---
--- These are the functions used by demo.sql.
--- ============================================================================
+
 
 DROP FUNCTION IF EXISTS place_limit_buy(bigint, int, numeric, numeric);
 DROP FUNCTION IF EXISTS place_limit_sell(bigint, int, numeric, numeric);
