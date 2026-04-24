@@ -174,33 +174,6 @@ PASSED`. No dependencies outside the Python standard library.
   need two real sessions.
 
 
-## What this project deliberately is *not*
-
-Our chosen domain has huge production complexity that is **out of
-scope** for this course:
-
-- external matching engine, deterministic sharding
-- Kafka / Debezium / CDC / transactional outbox
-- blockchain custody, deposit reorg handling
-- KYC / AML / FATF Travel Rule / GDPR retention
-- time-series partitioning, hot/warm/archive tiers
-- HA standby, PITR, logical replication
-- TLS, SCRAM, RLS, envelope encryption
-- Monte Carlo order-flow simulation
-
-None of these are on our syllabus; implementing them would hide the
-course material behind infrastructure. We were given a "hardening"
-document covering all of the above and explicitly scoped it out —
-see [`docs/00_scope.md`](docs/00_scope.md) for the full list with
-justifications.
-
-One item from that document would legitimately fit a future layer:
-a double-entry ledger with a zero-sum trigger. It's header + detail
-tables plus a `CHECK` enforcing that postings sum to zero per
-asset. It is mentioned in
-[`docs/04_concurrency.md`](docs/04_concurrency.md) and could become
-a Layer 6.
-
 
 ## Authors
 
