@@ -55,25 +55,6 @@ that matches against it is the **taker**.
 - Transaction isolation demos — lost updates, deadlocks (Layer 5)
 
 
-## Out of scope — deliberate, with justification
-
-| Feature                                | Why excluded                                              |
-|----------------------------------------|-----------------------------------------------------------|
-| Distributed architecture, sharding     | Not in syllabus; single node is fine for our data scale   |
-| Kafka, Debezium, CDC, outbox pattern   | Data engineering concern, not database theory             |
-| External matching engine               | Matching implemented in PL/pgSQL or the app, to stay in domain |
-| Blockchain-level custody modelling     | Deposits / withdrawals are abstract events                |
-| KYC / AML / GDPR / Travel Rule         | Compliance domain, not DB theory                          |
-| Time-series partitioning, retention    | Physical detail beyond our data volume                    |
-| 18-decimal precision, lots/ticks split | `NUMERIC(20,8)` is adequate for us                        |
-| Logical replication, HA standby, PITR  | Operations concern                                        |
-| RLS, TLS, SCRAM, encryption at rest    | Security chapter is not in our syllabus                   |
-| Monte Carlo simulation of order flow   | Quantitative finance research, not DB                     |
-
-Each of these is a legitimate exchange concern; each is a project in itself.
-Our goal is to stay inside the course and do it well.
-
-
 ## Target data volume
 
 - **Seed dataset (Layer 2)** — ~5 users, 5 assets, 4 markets, 5 orders,
